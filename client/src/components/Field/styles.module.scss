@@ -1,0 +1,22 @@
+.field {
+    display: flex;
+    flex-direction: column;
+    label {
+        font-size: 16px;
+        font-weight: 300;
+        padding-left: 5px;
+        padding-bottom: 2px;
+    }
+
+    input {
+        font-size: 16px;
+        width: 100%;
+        height: 30px;
+        padding-left: 7px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+        color: black;
+
+        &::placeholder {
+        }
+    }
+}

@@ -1,0 +1,17 @@
+.wrapper {
+}
+
+.footer {
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 -6px 10px 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .contacts > * {
+        font-weight: normal;
+        color: #478ac9;
+        margin-right: 20px;
+    }
+}

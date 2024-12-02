@@ -1,0 +1,37 @@
+.headerContainer {
+    width: 100%;
+    position: sticky;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    z-index: 999;
+    box-shadow: 4px;
+    box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
+}
+
+.header {
+    height: 71px;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    width: 357px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    color: black;
+
+    * {
+        font-size: 16px;
+    }
+
+    li:hover > * {
+        color: #478ac9;
+        transition: 200ms;
+    }
+}

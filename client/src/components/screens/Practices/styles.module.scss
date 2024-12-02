@@ -1,0 +1,58 @@
+.wrapper {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding-left: 25px;
+    padding-right: 25px;
+    min-height: 100vh;
+    padding-top: 71px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+
+    span {
+        margin-top: 10px;
+    }
+}
+
+.form {
+    margin: 50px auto;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 370px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.field {
+    width: 80%;
+    padding: 15px;
+    color: white !important;
+
+    input,select {
+        background-color: rgba(0, 0, 0, 0.2);
+        color: white !important;
+        font-size: 16px;
+    }
+
+    select {
+        width: 102%;
+    }
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+}

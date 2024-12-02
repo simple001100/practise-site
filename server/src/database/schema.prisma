@@ -1,0 +1,85 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Company {
+  id                  Int                   @id @default(autoincrement())
+  createdAt           DateTime              @default(now())
+  updatedAt           DateTime              @updatedAt
+  name                String
+  responsiblePerson   String
+  phone               String
+  email               String
+  address             String
+  password            String
+  ProjectApplication  ProjectApplication[]
+  PracticeApplication PracticeApplication[]
+  Token               Token[]
+  role                String
+}
+
+model Project {
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  name        String
+  photo       String
+  description String
+  link        String
+}
+
+model ProjectApplication {
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  name        String
+  description String
+  endDate     DateTime
+  company     Company  @relation(fields: [companyId], references: [id])
+  companyId   Int
+}
+
+model Practice {
+  id                  Int                   @id @default(autoincrement())
+  createdAt           DateTime              @default(now())
+  updatedAt           DateTime              @updatedAt
+  variant             String
+  startDate           DateTime
+  endDate             DateTime
+  PracticeApplication PracticeApplication[]
+}
+
+model PracticeApplication {
+  id         Int      @id @default(autoincrement())
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  company    Company  @relation(fields: [companyId], references: [id])
+  companyId  Int
+  practice   Practice @relation(fields: [practiceId], references: [id])
+  practiceId Int
+  count      Int
+}
+
+model Token {
+  id           Int      @id @default(autoincrement())
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  company      Company  @relation(fields: [companyId], references: [id])
+  companyId    Int
+  refreshToken String
+}
+
+model Emails {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  email     String
+}
